@@ -11,7 +11,13 @@ int main() {
     getline(input, text);
     input.close();
 
-    text.insert(6, "my ");
+
+    size_t pos = text.find(' ');
+
+    if (pos != string::npos) {
+    
+        text.insert(pos, " my");
+    }
 
     ofstream output("output.txt");
     output << text;
