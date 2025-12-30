@@ -10,13 +10,11 @@ int main() {
     ifstream input("input.txt");
     getline(input, text);
     input.close();
+    size_t firstSpace = text.find(' ');
+    size_t secondSpace = text.find(' ', firstSpace + 1);
 
-
-    size_t pos = text.find(' ');
-
-    if (pos != string::npos) {
-    
-        text.insert(pos, " my");
+    if (secondSpace != string::npos) {
+        text.insert(secondSpace, " beautefful");
     }
 
     ofstream output("output.txt");
